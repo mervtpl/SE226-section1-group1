@@ -1,0 +1,8 @@
+import google.generativeai as genai
+
+genai.configure(api_key="AIzaSyCjgZVne--9B41qT17-dUmcXVahk0Qx1EA")
+
+model = genai.GenerativeModel("gemini-pro")
+
+response = model.generate_content("Write a 3-line poem about the stars.")
+print(response.text)
