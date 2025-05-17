@@ -87,21 +87,7 @@ def get_movie_storyline(title):
         return f"Error using Cinemagoer: {str(e)}"
 
 
-def main():
-    print("Fetching top 10 movies from IMDb...")
-    top_movies = fetch_top_10_movies()
-
-    for title, link in top_movies:
-        print("TİTLE", title)
-        print("<SUMMARY>", get_movie_summary(link))
-        print("LINK", link)
-
-        print("\n📖 Storyline (Cinemagoer):")
-        storyline = get_movie_storyline(title)
-        print(storyline)
-        print("=" * 80)
 
 
-if __name__ == "__main__":
-    main()
+
 

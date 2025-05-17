@@ -1,9 +1,6 @@
 import google.generativeai as genai
 from vertexai.preview.vision_models import ImageGenerationModel
 import vertexai
-from PIL import Image
-import io
-import fetching_data
 
 genai.configure(api_key="AIzaSyCjgZVne--9B41qT17-dUmcXVahk0Qx1EA")
 
@@ -43,10 +40,3 @@ def generate_image(storyline, location, style):
     return result[0]._image_bytes
 
 
-if __name__ == "__main__":
-    location = "Tokyo"
-    style = "Futuristic"
-
-    img_bytes = generate_image(fetching_data.get_movie_storyline(), location, style)
-    img = Image.open(io.BytesIO(img_bytes))
-    img.show()

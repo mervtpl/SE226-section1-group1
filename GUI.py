@@ -184,7 +184,3 @@ class MovieGenerator:
                 f.write(dialogue)
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = MovieGenerator(root)
-    root.mainloop()
