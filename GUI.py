@@ -76,8 +76,8 @@ class MovieGenerator:
 
     def populate_movies(self):
         self.top_movies = fetching_data.fetch_top_10_movies()
-        for title, _ in self.top_movies:
-            self.movie_listbox.insert(tk.END, title)
+        for title,_ in self.top_movies:
+            self.movie_listbox.insert(tk.END,title)
 
     def on_movie_select(self, event):
         index = self.movie_listbox.curselection()
@@ -97,8 +97,10 @@ class MovieGenerator:
 
         self.movie_info.delete("1.0", tk.END)
         self.movie_info.insert(tk.END, f"Title: {title}\n\n")
+        self.movie_info.insert(tk.END, f"Movie Link:\n{self.selected_movie['link']}\n\n")
         self.movie_info.insert(tk.END, f"Summary:\n{self.selected_movie['summary']}\n\n")
         self.movie_info.insert(tk.END, f"Storyline:\n{self.storyline}")
+
 
     def generate_all(self):
         if not self.selected_movie:
